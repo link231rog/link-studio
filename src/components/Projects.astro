@@ -155,101 +155,127 @@ const projects: ProjectItem[] = [
 
     <!-- Projects Grid -->
     <div id="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.75rem;">
-      {projects.map((proj) => (
-        <article class="interactive-card project-card" data-category={proj.category} style="display: flex; flex-direction: column;">
-          
-          <!-- Cover Image Container -->
-          <div style="position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background-color: #111111; border-bottom: 1px solid var(--border-color);">
-            <img 
-              src={proj.cover} 
-              alt={proj.titleEn}
-              loading="lazy"
-              style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);"
-              class="project-img"
-            />
-            <!-- Category Badge overlay -->
-            <div style="position: absolute; top: 12px; left: 12px;">
-              <span class="font-mono" style="font-size: 0.65rem; padding: 0.25rem 0.5rem; border-radius: 4px; background-color: rgba(0, 0, 0, 0.75); color: #ffffff; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15); letter-spacing: 0.04em;">
-                <span data-lang-content="en">{proj.categoryLabelEn}</span>
-                <span data-lang-content="zh">{proj.categoryLabelZh}</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card Body -->
-          <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-            <div>
-              <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; color: var(--text-primary); margin-bottom: 0.65rem; letter-spacing: -0.015em;">
-                <span data-lang-content="en">{proj.titleEn}</span>
-                <span data-lang-content="zh">{proj.titleZh}</span>
-              </h3>
-              <p style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.25rem;">
-                <span data-lang-content="en">{proj.descEn}</span>
-                <span data-lang-content="zh">{proj.descZh}</span>
-              </p>
-            </div>
-
-            <!-- Footer: Tech Tags & Links -->
-            <div>
-              <!-- Tech Tags -->
-              <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                {proj.tags.map((t) => (
-                  <span class="tech-tag">{t}</span>
-                ))}
-              </div>
-
-              <!-- Action Links -->
-              <div style="display: flex; align-items: center; gap: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem; font-size: 0.8125rem;">
-                {proj.demoUrl && (
-                  <a href={proj.demoUrl} target="_blank" rel="noopener noreferrer" class="project-action-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-primary); font-weight: 500; text-decoration: none;">
-                    <span>Live Demo</span>
-                    <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </a>
-                )}
-                {proj.repoUrl && (
-                  <a href={proj.repoUrl} target="_blank" rel="noopener noreferrer" class="project-action-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); text-decoration: none;">
-                    <span>GitHub</span>
-                    <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </a>
-                )}
-                {proj.bilibiliUrl && (
-                  <a href={proj.bilibiliUrl} target="_blank" rel="noopener noreferrer" class="project-action-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); text-decoration: none;">
-                    <span>Bilibili 视频</span>
-                    <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </a>
-                )}
-                {!proj.demoUrl && !proj.repoUrl && (
-                  <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted);">
-                    <span data-lang-content="en">Internal Production Framework</span>
-                    <span data-lang-content="zh">内部核心架构与交付引擎</span>
-                  </span>
-                )}
+      {projects.map((proj) => {
+        const mainUrl = proj.demoUrl || proj.bilibiliUrl || proj.repoUrl;
+        return (
+          <article 
+            class="interactive-card project-card" 
+            data-category={proj.category} 
+            style={`display: flex; flex-direction: column; position: relative; ${mainUrl ? 'cursor: pointer;' : ''}`}
+          >
+            {mainUrl && (
+              <a 
+                href={mainUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="stretched-card-link" 
+                aria-label={`Open ${proj.titleEn} live demo`}
+              />
+            )}
+            
+            <!-- Cover Image Container -->
+            <div style="position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background-color: #111111; border-bottom: 1px solid var(--border-color);">
+              <img 
+                src={proj.cover} 
+                alt={proj.titleEn}
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);"
+                class="project-img"
+              />
+              <!-- Category Badge overlay -->
+              <div style="position: absolute; top: 12px; left: 12px; z-index: 2;">
+                <span class="font-mono" style="font-size: 0.65rem; padding: 0.25rem 0.5rem; border-radius: 4px; background-color: rgba(0, 0, 0, 0.75); color: #ffffff; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15); letter-spacing: 0.04em;">
+                  <span data-lang-content="en">{proj.categoryLabelEn}</span>
+                  <span data-lang-content="zh">{proj.categoryLabelZh}</span>
+                </span>
               </div>
             </div>
 
-          </div>
+            <!-- Card Body -->
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <h3 class="project-title" style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; color: var(--text-primary); margin-bottom: 0.65rem; letter-spacing: -0.015em; transition: color 0.15s ease;">
+                  <span data-lang-content="en">{proj.titleEn}</span>
+                  <span data-lang-content="zh">{proj.titleZh}</span>
+                </h3>
+                <p style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                  <span data-lang-content="en">{proj.descEn}</span>
+                  <span data-lang-content="zh">{proj.descZh}</span>
+                </p>
+              </div>
 
-        </article>
-      ))}
+              <!-- Footer: Tech Tags & Links -->
+              <div>
+                <!-- Tech Tags -->
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  {proj.tags.map((t) => (
+                    <span class="tech-tag">{t}</span>
+                  ))}
+                </div>
+
+                <!-- Action Links -->
+                <div style="display: flex; align-items: center; gap: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem; font-size: 0.8125rem; position: relative; z-index: 2;">
+                  {proj.demoUrl && (
+                    <a href={proj.demoUrl} target="_blank" rel="noopener noreferrer" class="project-action-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-primary); font-weight: 500; text-decoration: none;">
+                      <span>Live Demo</span>
+                      <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </a>
+                  )}
+                  {proj.repoUrl && (
+                    <a href={proj.repoUrl} target="_blank" rel="noopener noreferrer" class="project-action-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); text-decoration: none;">
+                      <span>GitHub</span>
+                      <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </a>
+                  )}
+                  {proj.bilibiliUrl && (
+                    <a href={proj.bilibiliUrl} target="_blank" rel="noopener noreferrer" class="project-action-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); text-decoration: none;">
+                      <span>Bilibili 视频</span>
+                      <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </a>
+                  )}
+                  {!proj.demoUrl && !proj.repoUrl && (
+                    <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted);">
+                      <span data-lang-content="en">Internal Production Framework</span>
+                      <span data-lang-content="zh">内部核心架构与交付引擎</span>
+                    </span>
+                  )}
+                </div>
+              </div>
+
+            </div>
+
+          </article>
+        );
+      })}
     </div>
 
   </div>
 </section>
 
 <style>
+  .stretched-card-link {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+  }
   .interactive-card:hover .project-img {
     transform: scale(1.03);
   }
   .project-action-link {
+    position: relative;
+    z-index: 2;
     transition: color 0.15s ease;
   }
   .project-action-link:hover {
