@@ -1,0 +1,55 @@
+---
+// Stack.astro
+
+const stackItems = [
+  { name: "Three.js", category: "Spatial & 3D", desc: "WebGL Scene Graph & Custom Shaders" },
+  { name: "WebGL / GLSL", category: "Graphics", desc: "Hardware-accelerated fragment/vertex shaders" },
+  { name: "Astro", category: "Web Framework", desc: "Zero-JS island architecture & ultra-fast SSG" },
+  { name: "React", category: "UI Engine", desc: "Declarative component trees & reactive state" },
+  { name: "Remotion", category: "Creative Code", desc: "Programmatic frame-by-frame video synthesis" },
+  { name: "TypeScript", category: "Core Language", desc: "End-to-end type safety & compile-time proofs" },
+  { name: "Cloudflare Workers", category: "Serverless", desc: "Sub-50ms edge computing & distributed KV" },
+  { name: "Python", category: "Agent Logic", desc: "LLM agent routing, AST parsing & tool chains" },
+  { name: "Vite", category: "Tooling", desc: "Lightning fast HMR & optimized rollups" },
+  { name: "Blender", category: "3D Asset Pipeline", desc: "Parametric geometry, rigging & baking" }
+];
+---
+
+<section id="stack" style="padding-top: 4.5rem; padding-bottom: 5rem; border-top: 1px solid var(--border-color);">
+  <div class="container-custom">
+    
+    <!-- Section Header -->
+    <div style="margin-bottom: 3rem;">
+      <div class="font-mono" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">
+        // <span data-lang-content="en">TECHNOLOGY STACK & STANDARDS</span><span data-lang-content="zh">技术栈与交付标准</span>
+      </div>
+      <h2 style="font-size: 1.85rem; font-weight: 700; letter-spacing: -0.025em; color: var(--text-primary);">
+        <span data-lang-content="en">Battle-Tested Modern Stack</span>
+        <span data-lang-content="zh">经受实战检验的现代工程工具链</span>
+      </h2>
+    </div>
+
+    <!-- Monochrome Pill Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem;">
+      {stackItems.map((item) => (
+        <div class="interactive-card" style="padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="margin-bottom: 0.75rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+              <span style="font-size: 1rem; font-weight: 600; color: var(--text-primary); font-family: 'JetBrains Mono', monospace;">
+                {item.name}
+              </span>
+              <span class="font-mono" style="font-size: 0.65rem; color: var(--text-muted); border: 1px solid var(--border-color); padding: 0.1rem 0.35rem; border-radius: 3px;">
+                {item.category}
+              </span>
+            </div>
+            <p style="font-size: 0.8125rem; line-height: 1.5; color: var(--text-secondary);">
+              {item.desc}
+            </p>
+          </div>
+          <div style="height: 2px; width: 24px; background-color: var(--border-color);"></div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

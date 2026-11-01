@@ -1,0 +1,131 @@
+---
+// Header.astro
+---
+
+<header class="site-nav">
+  <div class="container-custom" style="display: flex; align-items: center; justify-content: space-between; height: 64px;">
+    <!-- Logo / Brand -->
+    <a href="#" style="display: flex; align-items: center; gap: 0.65rem; text-decoration: none; color: inherit;">
+      <div style="width: 24px; height: 24px; border: 1.5px solid var(--text-primary); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;">
+        L
+      </div>
+      <span style="font-weight: 700; font-size: 0.9375rem; letter-spacing: -0.02em; font-family: 'JetBrains Mono', monospace;">
+        LINK STUDIO
+      </span>
+    </a>
+
+    <!-- Nav items -->
+    <nav style="display: flex; align-items: center; gap: 2rem;">
+      <div class="nav-links" style="display: flex; align-items: center; gap: 1.5rem; font-size: 0.84rem; color: var(--text-secondary);">
+        <a href="#work" class="nav-link">
+          <span data-lang-content="en">Work</span>
+          <span data-lang-content="zh">作品</span>
+        </a>
+        <a href="#capabilities" class="nav-link">
+          <span data-lang-content="en">Capabilities</span>
+          <span data-lang-content="zh">核心能力</span>
+        </a>
+        <a href="#stack" class="nav-link">
+          <span data-lang-content="en">Stack</span>
+          <span data-lang-content="zh">技术栈</span>
+        </a>
+        <a href="#contact" class="nav-link">
+          <span data-lang-content="en">Contact</span>
+          <span data-lang-content="zh">联系</span>
+        </a>
+      </div>
+
+      <!-- Controls: Lang & Theme Toggles -->
+      <div style="display: flex; align-items: center; gap: 0.5rem; border-left: 1px solid var(--border-color); padding-left: 1rem;">
+        <!-- Language Switcher -->
+        <button id="lang-toggle-btn" class="icon-btn" aria-label="Toggle language">
+          <span id="lang-indicator">ZH</span>
+        </button>
+
+        <!-- Theme Switcher -->
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Toggle theme">
+          <svg id="theme-sun-icon" style="width: 14px; height: 14px; display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="theme-moon-icon" style="width: 14px; height: 14px; display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.15s ease;
+  }
+  .nav-link:hover {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 640px) {
+    .nav-links {
+      display: none !important;
+    }
+  }
+</style>
+
+<script is:inline>
+  function setupHeaderControls() {
+    const langBtn = document.getElementById('lang-toggle-btn');
+    const langIndicator = document.getElementById('lang-indicator');
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    const sunIcon = document.getElementById('theme-sun-icon');
+    const moonIcon = document.getElementById('theme-moon-icon');
+
+    function updateIcons() {
+      const curTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      if (curTheme === 'dark') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+
+      const curLang = document.documentElement.getAttribute('data-lang') || 'en';
+      langIndicator.textContent = curLang === 'en' ? '中' : 'EN';
+    }
+
+    if (langBtn) {
+      langBtn.addEventListener('click', () => {
+        const curLang = document.documentElement.getAttribute('data-lang') || 'en';
+        const nextLang = curLang === 'en' ? 'zh' : 'en';
+        document.documentElement.setAttribute('data-lang', nextLang);
+        localStorage.setItem('studio-lang', nextLang);
+        updateIcons();
+      });
+    }
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const curTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const nextTheme = curTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('studio-theme', nextTheme);
+        updateIcons();
+      });
+    }
+
+    updateIcons();
+  }
+
+  setupHeaderControls();
+  document.addEventListener('astro:page-load', setupHeaderControls);
+</script>

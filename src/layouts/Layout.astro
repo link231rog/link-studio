@@ -1,0 +1,46 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "LINK STUDIO — Spatial Computing & Autonomous Agents",
+  description = "Independent engineering studio crafting next-generation spatial 3D systems, deterministic creative code, and autonomous agent workbenches."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme & Lang Early Script (zero flicker) -->
+    <script is:inline>
+      (function() {
+        const storedTheme = localStorage.getItem('studio-theme');
+        const theme = storedTheme ? storedTheme : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+
+        const storedLang = localStorage.getItem('studio-lang');
+        const lang = storedLang ? storedLang : 'en';
+        document.documentElement.setAttribute('data-lang', lang);
+      })();
+    </script>
+  </head>
+  <body class="bg-grid">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,76 @@
+---
+// Hero.astro
+---
+
+<section style="padding-top: 5rem; padding-bottom: 4rem; position: relative;">
+  <div class="container-custom" style="max-width: 980px; text-align: left;">
+    
+    <!-- Top Pill Badge -->
+    <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0.85rem; border-radius: 9999px; background-color: var(--badge-bg); border: 1px solid var(--badge-border); margin-bottom: 1.75rem;">
+      <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #10b981;"></span>
+      <span class="font-mono" style="font-size: 0.725rem; font-weight: 500; letter-spacing: 0.04em; color: var(--badge-text);">
+        <span data-lang-content="en">STUDIO FOR SPATIAL COMPUTING & AUTONOMOUS AGENTS</span>
+        <span data-lang-content="zh">空间计算与自主智能体工程实验室</span>
+      </span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 style="font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.035em; color: var(--text-primary); margin-bottom: 1.5rem;">
+      <span data-lang-content="en">
+        Engineering Next-Gen Spatial Systems & Autonomous Intelligence.
+      </span>
+      <span data-lang-content="zh">
+        构建下一代空间交互系统与高可靠自主智能体
+      </span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p style="font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.6; color: var(--text-secondary); max-width: 760px; margin-bottom: 2.5rem; font-weight: 400;">
+      <span data-lang-content="en">
+        We craft production-grade 3D web applications, deterministic creative code, and autonomous agent systems.
+      </span>
+      <span data-lang-content="zh">
+        专注于高性能 Web 3D 空间计算、确定性创意编码与工业级智能体架构交付。
+      </span>
+    </p>
+
+    <!-- CTAs -->
+    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+      <a href="#work" class="btn-primary">
+        <span data-lang-content="en">Explore Work ↓</span>
+        <span data-lang-content="zh">浏览作品 ↓</span>
+      </a>
+      <a href="#contact" class="btn-secondary">
+        <span data-lang-content="en">Contact Us</span>
+        <span data-lang-content="zh">联系我们</span>
+      </a>
+      
+      <!-- Key Metric Indicator -->
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 1.75rem; border-left: 1px solid var(--border-color); padding-left: 1.75rem;" class="hero-stats">
+        <div>
+          <div class="font-mono" style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary);">60 FPS</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+            <span data-lang-content="en">WebGL Real-time</span>
+            <span data-lang-content="zh">实时三维渲染</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-mono" style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary);">100%</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+            <span data-lang-content="en">Deterministic Code</span>
+            <span data-lang-content="zh">确定性代码交付</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .hero-stats {
+      display: none !important;
+    }
+  }
+</style>

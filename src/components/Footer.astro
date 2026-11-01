@@ -1,0 +1,102 @@
+---
+// Footer.astro
+---
+
+<footer id="contact" style="border-top: 1px solid var(--border-color); padding-top: 5rem; padding-bottom: 5rem; background-color: var(--card-bg);">
+  <div class="container-custom">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+      
+      <!-- Studio Statement -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem;">
+          <div style="width: 20px; height: 20px; border: 1.5px solid var(--text-primary); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;">
+            L
+          </div>
+          <span style="font-weight: 700; font-size: 0.95rem; letter-spacing: -0.02em; font-family: 'JetBrains Mono', monospace; color: var(--text-primary);">
+            LINK STUDIO
+          </span>
+        </div>
+        <p style="font-size: 0.875rem; line-height: 1.7; color: var(--text-secondary); max-width: 380px;">
+          <span data-lang-content="en">
+            Independent engineering studio bridging spatial computing and autonomous agent architectures. Dedicated to deterministic code quality and production stability.
+          </span>
+          <span data-lang-content="zh">
+            专注于空间计算与自主智能体架构的独立工程工作室。恪守确定性代码交付标准与工业级高稳定性运行。
+          </span>
+        </p>
+      </div>
+
+      <!-- Contact & Channels -->
+      <div>
+        <div class="font-mono" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem;">
+          // <span data-lang-content="en">Direct Communication</span><span data-lang-content="zh">直接联系通道</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.875rem;">
+          <a href="mailto:zixuan_huang_ee@outlook.com" class="footer-link" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary); font-family: 'JetBrains Mono', monospace;">
+            <svg style="width: 16px; height: 16px; stroke: var(--text-secondary);" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>zixuan_huang_ee@outlook.com</span>
+          </a>
+          <a href="https://github.com/link231rog" target="_blank" rel="noopener noreferrer" class="footer-link" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-secondary); font-family: 'JetBrains Mono', monospace;">
+            <svg style="width: 16px; height: 16px; stroke: currentColor;" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>github.com/link231rog</span>
+          </a>
+          <a href="https://x.com/link231rog" target="_blank" rel="noopener noreferrer" class="footer-link" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-secondary); font-family: 'JetBrains Mono', monospace;">
+            <svg style="width: 16px; height: 16px; stroke: currentColor;" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+            <span>x.com/link231rog</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Action / Status -->
+      <div>
+        <div class="font-mono" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem;">
+          // <span data-lang-content="en">AVAILABILITY</span><span data-lang-content="zh">当前协作状态</span>
+        </div>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.75rem; border-radius: 4px; border: 1px solid var(--border-color); background-color: var(--badge-bg); font-size: 0.8125rem; margin-bottom: 1rem;">
+          <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #10b981;"></span>
+          <span style="color: var(--text-primary); font-weight: 500;">
+            <span data-lang-content="en">Available for Q4 Commercial Inquiries</span>
+            <span data-lang-content="zh">开放 Q4 商业级定制项目合作</span>
+          </span>
+        </div>
+        <p style="font-size: 0.775rem; line-height: 1.6; color: var(--text-muted);">
+          <span data-lang-content="en">
+            Specialized in complex WebGL visualization, autonomous agent integration, and high-standard interactive web architectures.
+          </span>
+          <span data-lang-content="zh">
+            承接高难度 WebGL 空间计算开发、自主智能体系统研发与高标准交互式工程系统落地。
+          </span>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 2rem; font-size: 0.75rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+      <div>
+        © 2026 LINK STUDIO. All rights reserved.
+      </div>
+      <div>
+        Engineered with Astro & Monochrome Precision
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .footer-link {
+    transition: color 0.15s ease;
+  }
+  .footer-link:hover {
+    color: var(--text-primary) !important;
+  }
+</style>

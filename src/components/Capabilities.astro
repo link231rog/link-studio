@@ -1,0 +1,132 @@
+---
+// Capabilities.astro
+---
+
+<section id="capabilities" style="padding-top: 4rem; padding-bottom: 5rem; border-top: 1px solid var(--border-color);">
+  <div class="container-custom">
+    
+    <!-- Section Header -->
+    <div style="margin-bottom: 3rem;">
+      <div class="font-mono" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">
+        // <span data-lang-content="en">CAPABILITIES & PILLARS</span><span data-lang-content="zh">核心工程支柱</span>
+      </div>
+      <h2 style="font-size: 1.85rem; font-weight: 700; letter-spacing: -0.025em; color: var(--text-primary);">
+        <span data-lang-content="en">Engineered for Rigorous Production Needs</span>
+        <span data-lang-content="zh">面向严苛工业交付的工程底座</span>
+      </h2>
+    </div>
+
+    <!-- 4 Pillars Bento Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+      
+      <!-- Card 1 -->
+      <div class="interactive-card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted);">01</span>
+            <svg style="width: 20px; height: 20px; stroke: var(--text-primary);" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); letter-spacing: -0.015em;">
+            <span data-lang-content="en">Spatial & 3D Computing</span>
+            <span data-lang-content="zh">空间计算与 3D 渲染</span>
+          </h3>
+          <p style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            <span data-lang-content="en">High-performance Three.js & WebGL architectures with dynamic level-of-detail, procedural geometry, and real-time GPU topological shaders.</span>
+            <span data-lang-content="zh">高性能 Three.js 与 WebGL 架构，支持动态 LOD 分级、程序化几何形变及实时 GPU 拓扑着色管线。</span>
+          </p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+          <span class="tech-tag">Three.js</span>
+          <span class="tech-tag">WebGL</span>
+          <span class="tech-tag">Shaders</span>
+          <span class="tech-tag">GLTF/GLB</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="interactive-card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted);">02</span>
+            <svg style="width: 20px; height: 20px; stroke: var(--text-primary);" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); letter-spacing: -0.015em;">
+            <span data-lang-content="en">Autonomous Agent Workbenches</span>
+            <span data-lang-content="zh">自主智能体系统</span>
+          </h3>
+          <p style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            <span data-lang-content="en">Deterministic multi-agent routing, Model Context Protocol (MCP) servers, context engineering, and automated scientific auditing pipelines.</span>
+            <span data-lang-content="zh">多智能体分流路由、Model Context Protocol (MCP) 架构、上下文工程与全自动研报核查流水线。</span>
+          </p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+          <span class="tech-tag">Multi-Agent</span>
+          <span class="tech-tag">MCP Protocol</span>
+          <span class="tech-tag">Context Eng</span>
+          <span class="tech-tag">Tool Calling</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="interactive-card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted);">03</span>
+            <svg style="width: 20px; height: 20px; stroke: var(--text-primary);" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); letter-spacing: -0.015em;">
+            <span data-lang-content="en">Deterministic Creative Coding</span>
+            <span data-lang-content="zh">确定性创意编码</span>
+          </h3>
+          <p style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            <span data-lang-content="en">Frame-accurate programmatic video synthesis via Remotion, headless browser rendering, and mathematical choreography.</span>
+            <span data-lang-content="zh">基于 Remotion 的逐帧精确程序化视频合成、无头浏览器批量渲染及精密数学视效编排。</span>
+          </p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+          <span class="tech-tag">Remotion</span>
+          <span class="tech-tag">Canvas2D</span>
+          <span class="tech-tag">FFmpeg</span>
+          <span class="tech-tag">Frame Accuracy</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="interactive-card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted);">04</span>
+            <svg style="width: 20px; height: 20px; stroke: var(--text-primary);" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); letter-spacing: -0.015em;">
+            <span data-lang-content="en">Full-Stack Production Systems</span>
+            <span data-lang-content="zh">无服务器云原生架构</span>
+          </h3>
+          <p style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            <span data-lang-content="en">Global edge computing on Cloudflare Workers/Pages with sub-50ms TTFB, zero cold starts, and resilient serverless automation.</span>
+            <span data-lang-content="zh">基于 Cloudflare 全球边缘网络的无服务器全栈体系，毫秒级 TTFB 极速响应与零冷启动高可用。</span>
+          </p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+          <span class="tech-tag">Cloudflare</span>
+          <span class="tech-tag">Workers</span>
+          <span class="tech-tag">Edge KV</span>
+          <span class="tech-tag">Astro</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
